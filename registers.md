@@ -15,19 +15,47 @@ It is useful to remember the registers via the name scheme they use. Registers f
 
 ### 1-byte registers
 
-{TODO}
+1. `a`
+2. `b`
+3. `c`
+4. `d`
+5. `e`
+6. `f`
+7. `g`
+8. `h`
 
-### 2-byte registers
+### 2-byte registers (`e`-postfixed)
 
-{TODO}
+1. `ae`
+2. `be`
+3. `ce`
+4. `de`
+5. `ee`
+6. `fe`
+7. `ge`
+8. `he`
 
-### 4-byte registers
+### 4-byte registers (`x`-postfixed)
 
-{TODO}
+1. `aex`
+2. `bex`
+3. `cex`
+4. `dex`
+5. `eex`
+6. `fex`
+7. `gex`
+8. `hex`
 
-### 8-byte registers
+### 8-byte registers (`r`-prefixed)
 
-{TODO}
+1. `raex`
+2. `rbex`
+3. `rcex`
+4. `rdex`
+5. `reex`
+6. `rfex`
+7. `rgex`
+8. `rhex`
 
 # Status registers
 
