@@ -1,4 +1,4 @@
-Dvx
+DvX
 ===
 
 **DvX** is an emulator for the DeavmiX architecture.
