@@ -8,5 +8,16 @@ namespace Dvx.Misc
             //in the returned string
             return ""+(ulong)address;
         }
+
+
+    
+        public static string getUnsignedAddressFormatStringByte(long address)
+        {
+            //Get the lowest 8 bits
+            sbyte theByte = (sbyte)address;
+
+            //Retur a string that treats the byte as unsigned and hence formats the number as an unsigned number in the returned string
+            return ""+(byte)theByte;
+        }
     }
 }

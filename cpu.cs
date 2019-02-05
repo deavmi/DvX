@@ -56,9 +56,58 @@ namespace Dvx.Internals.Processor
             
 
             //TODO: add more
+
+            //TODO: check for an interrupt if any
+            Console.WriteLine("Checking the interrupt status register...");
+
+            //If there is an interrupt
+            if(isInterrupted())
+            {
+                //The interrupt ID
+                sbyte interruptID = registerSet.getInterruptRegister();
+
+                //Passing it will extend it with sign extension from [11111111] (255) for example to [11111111 11111111 11111111 11111111]
+                Console.WriteLine("Interrupt detected with ID: \"" + Utils.getUnsignedAddressFormatStringByte(interruptID)+"\"");
+
+                //TODO: continue here
+            }
+            //If there is no interrupt
+            else
+            {
+                Console.WriteLine("No interrupt");
+            }
+
+            //TODO: add if statement and interrupt check
+            
+            //TODO: add interrupt return and save before (nah done by user)
+            //TODO: (This is how I think it should be done) The user should save the current IP and then do the interrupt, then `iret` (part of the interrupt handler's code) with arg of register
         }
 
-        //TODO: check for an interrupt if any
+        private bool isInterrupted()
+        {
+            bool isInterrupted = false;
+
+            //Check if the value in the interrupt status register is `0`
+
+            //Status will be sign extended, in this case [00000000 00000000 00000000 00000000] which does equal [00000000 00000000 00000000 00000000]
+            if(registerSet.getInterruptRegister() == 0)
+            {
+                //Then there is no interrupt
+                isInterrupted = false;
+            }
+            //If it is anything else then it is an interrupt
+            //Status register would have been sign extended already to (for example 255) [11111111]
+            //[11111111 11111111 11111111 11111111] which does not equal [00000000 00000000 00000000 00000000]
+            else
+            {
+                //Else, then there is an interrupt
+                isInterrupted = true;
+            }
+
+            return isInterrupted;
+        }
+
+        
     }
 
     
